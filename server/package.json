@@ -1,0 +1,46 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Koa.js RESTfull app",
+  "main": "index.js",
+  "dependencies": {
+    "@koa/cors": "^3.0.0",
+    "@sendgrid/mail": "^6.4.0",
+    "class-validator": "^0.9.1",
+    "jsonwebtoken": "^8.5.1",
+    "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-jwt": "^3.6.0",
+    "koa-router": "^7.4.0",
+    "pg": "^7.11.0",
+    "ts-node": "^8.3.0",
+    "tsconfig-paths": "^3.8.0",
+    "typeorm": "^0.2.18"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.15",
+    "@types/node": "^12.6.6",
+    "jest": "^24.8.0",
+    "nodemon": "^1.19.1",
+    "supertest": "^4.0.2",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.5.3"
+  },
+  "scripts": {
+    "test": "jest --watchAll",
+    "start": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kristian-ackar/confi.git"
+  },
+  "keywords": [
+    "confi"
+  ],
+  "author": "Kristian Ačkar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kristian-ackar/confi/issues"
+  },
+  "homepage": "https://github.com/kristian-ackar/confi#readme"
+}

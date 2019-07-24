@@ -1,0 +1,12 @@
+export namespace Enums {
+	export enum HttpStatus {
+		OK_200 = 200,
+		CREATED_201 = 201,
+		NO_CONTENT_204 = 204,
+		BAD_REQUEST_400 = 400,
+		UNAUTHORIZED_401 = 401,
+		FORBIDDEN_402 = 403,
+		NOT_FOUND_404 = 404,
+		INTERNAL_SERVER_ERROR = 500
+	}
+}
