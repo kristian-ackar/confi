@@ -1,0 +1,50 @@
+<h1 class="name">{{conference.name}}</h1>
+<button *ngIf="isLoggedIn" class="btn-edit" mat-raised-button color="warn" (click)="edit()">Edit</button>
+<div class="teaser">
+	<div>{{conference.start | date}} &mdash; {{conference.end | date}}</div>
+</div>
+<div class="intro">
+	<p>{{conference.intro}}</p>
+	<p>The BEM approach ensures that everyone who participates in the development of a website works with a single codebase and speaks the same language. Using proper naming will prepare you for the changes in design of the website.</p>
+</div>
+<div class="description description--green">
+	<h3 class="description__title description__title--green">{{conference.title}}</h3>
+	<p class="description__paragraph">{{conference.description}}</p>
+	<p class="description__paragraph">Element names may consist of Latin letters, digits, dashes and underscores. CSS class is formed as block name plus two underscores plus element name.</p>
+</div>
+<div class="description description--red">
+	<h3 class="description__title description__title--red">Book for a conference</h3>
+	<button mat-raised-button color="primary" (click)="book()">Book now</button>
+</div>
+<div class="description description--blue" [hidden]="!isLoggedIn">
+	<h3 class="description__title description__title--blue">Participants</h3>
+	<table mat-table [dataSource]="dataSource" class="mat-elevation-z1">
+	
+		<!-- Name Column -->
+		<ng-container matColumnDef="firstName">
+			<th mat-header-cell *matHeaderCellDef> Name </th>
+			<td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+		</ng-container>
+	
+		<!-- Start Column -->
+		<ng-container matColumnDef="phone">
+			<th mat-header-cell *matHeaderCellDef> Phone </th>
+			<td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+		</ng-container>
+	
+		<!-- End Column -->
+		<ng-container matColumnDef="email">
+			<th mat-header-cell *matHeaderCellDef> Email </th>
+			<td mat-cell *matCellDef="let element"> {{element.email}} </td>
+		</ng-container>
+
+		<!-- Icon Column -->
+		<ng-container matColumnDef="icon">
+			<th mat-header-cell *matHeaderCellDef > Action </th>
+			<td mat-cell *matCellDef="let element"><mat-icon class="emph" [class.hide]="!isLoggedIn" aria-hidden="false" (click)="delBooking(element.id)">delete_outline</mat-icon></td>
+		</ng-container>
+	
+		<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+		<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+	</table>
+</div>

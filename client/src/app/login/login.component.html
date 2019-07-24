@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Enter credentials</h1>
+<div mat-dialog-content>
+	<form (ngSubmit)="login(f)" #f="ngForm" id="f">
+		<mat-form-field>
+			<input matInput placeholder="Username" name="username" ngModel>
+		</mat-form-field>
+		<mat-form-field>
+			<input type="password" matInput placeholder="Password" name="password" ngModel>
+		</mat-form-field>
+	</form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancelClick()">Cancel</button>
+  <button type="submit" form="f" mat-button cdkFocusInitial>Login</button>
+</div>

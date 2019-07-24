@@ -1,0 +1,28 @@
+table {
+	width: 100%;
+	
+	tr {
+		mat-icon {
+			visibility: hidden;
+			cursor: pointer;
+		}
+	}
+
+	tr:hover {
+		mat-icon {
+			visibility: visible;
+		}
+	}
+}
+
+.emph {
+	color: #ff4136;
+}
+
+.hide {
+	display: none;
+}
+
+.btn-edit {
+	margin: 1rem 0;
+}

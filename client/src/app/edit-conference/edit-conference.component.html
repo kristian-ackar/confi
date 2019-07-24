@@ -1,0 +1,41 @@
+<h1 mat-dialog-title>Conference</h1>
+<div mat-dialog-content>
+	<form (ngSubmit)="save(f)" #f="ngForm" id="f" class="container">
+		<mat-form-field>
+			<input matInput placeholder="Name" name="name" [(ngModel)]="conference.name">
+		</mat-form-field>
+		<mat-form-field>
+			<input matInput [matDatepicker]="dpStart" placeholder="Start" name="start" disabled [(ngModel)]="conference.start">
+			<mat-datepicker-toggle matSuffix [for]="dpStart"></mat-datepicker-toggle>
+			<mat-datepicker #dpStart disabled="false"></mat-datepicker>
+		</mat-form-field>
+		<mat-form-field>
+			<input matInput [matDatepicker]="dpEnd" placeholder="End" name="end" disabled [(ngModel)]="conference.end">
+			<mat-datepicker-toggle matSuffix [for]="dpEnd"></mat-datepicker-toggle>
+			<mat-datepicker #dpEnd disabled="false"></mat-datepicker>
+		</mat-form-field>
+		<mat-form-field>
+			<mat-label>Intro</mat-label>
+			<textarea matInput
+								cdkTextareaAutosize
+								#autosizeIntro="cdkTextareaAutosize"
+								cdkAutosizeMinRows="1"
+								cdkAutosizeMaxRows="5" name="intro" [(ngModel)]="conference.intro"></textarea>
+		</mat-form-field>
+		<mat-form-field>
+			<input matInput placeholder="Title" name="title" [(ngModel)]="conference.title">
+		</mat-form-field>
+		<mat-form-field>
+			<mat-label>Description</mat-label>
+			<textarea matInput
+								cdkTextareaAutosize
+								#autosizeDescription="cdkTextareaAutosize"
+								cdkAutosizeMinRows="1"
+								cdkAutosizeMaxRows="5" name="description" [(ngModel)]="conference.description"></textarea>
+		</mat-form-field>
+	</form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancelClick()">Cancel</button>
+  <button type="submit" form="f" mat-button cdkFocusInitial>Save</button>
+</div>

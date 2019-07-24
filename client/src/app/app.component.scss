@@ -1,0 +1,36 @@
+.header {
+	justify-content: space-between;
+	font-weight: 300;
+}
+
+.app {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	cursor: pointer;
+
+	.app__name {
+		margin: 0 1rem;
+	}
+}
+
+.menu {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	.menu__item {
+		margin: 0 5px;
+	}
+
+	.menu__item:hover {
+		border-bottom: 1px solid #ffffff;
+	}
+}
+
+.container {
+	width: 80%;
+	margin: 0 auto;
+	padding: 0 2rem;
+	text-align: justify;
+}
