@@ -6,7 +6,7 @@
   "dependencies": {
     "@koa/cors": "^3.0.0",
     "@sendgrid/mail": "^6.4.0",
-    "class-validator": "^0.9.1",
+    "class-validator": "^0.14.0",
     "jsonwebtoken": "^8.5.1",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
